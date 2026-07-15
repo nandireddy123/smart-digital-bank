@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Digital Bank — Banking, built right</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark-custom fixed-top py-3">
+  <div class="container">
+    <a class="brand-mark" href="index.html">
+      <span class="brand-seal">S</span> Smart Digital Bank
+    </a>
+    <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <a href="login.html" class="btn btn-outline-gold me-2 mt-2 mt-lg-0">Log in</a>
+      <a href="register.html" class="btn btn-gold mt-2 mt-lg-0">Open an account</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="navy-bg hero-section">
+  <div class="hero-ledger-line position-absolute top-0 start-0 w-100"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 text-white">
+        <div class="section-eyebrow mb-3">Digital-first · Branch-backed</div>
+        <h1 class="display-4 fw-medium mb-4" style="line-height:1.15;">Your ledger,<br>kept honestly.</h1>
+        <p class="fs-5" style="color: var(--text-muted); max-width: 480px;">
+          Open Savings, Current, or Student accounts in minutes. Move money, track every rupee,
+          and talk to a real employee or manager when it matters — all in one place.
+        </p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="register.html" class="btn btn-gold btn-lg px-4">Open an account</a>
+          <a href="login.html" class="btn btn-outline-gold btn-lg px-4">I already bank here</a>
+        </div>
+        <div class="d-flex gap-4 mt-5 flex-wrap">
+          <div>
+            <div class="hero-counter fs-3 text-gold" id="statAccounts">12,480+</div>
+            <div class="text-muted-custom small">accounts opened</div>
+          </div>
+          <div>
+            <div class="hero-counter fs-3 text-gold">3</div>
+            <div class="text-muted-custom small">account types</div>
+          </div>
+          <div>
+            <div class="hero-counter fs-3 text-gold">24/7</div>
+            <div class="text-muted-custom small">access to your money</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="glass-card p-4 mx-auto" style="max-width: 420px; transform: rotate(-2deg);">
+          <div class="d-flex justify-content-between align-items-start mb-4">
+            <div>
+              <div class="text-muted-custom small">PASSBOOK</div>
+              <div class="fs-5 fw-semibold">Ravi Kumar</div>
+            </div>
+            <span class="brand-seal">S</span>
+          </div>
+          <div class="mb-3">
+            <div class="text-muted-custom small">Account No.</div>
+            <div class="font-mono fs-6">4483 2585 2934</div>
+          </div>
+          <hr style="border-color: rgba(201,162,39,0.25);">
+          <div class="mb-2 d-flex justify-content-between">
+            <span class="text-muted-custom small">Available balance</span>
+            <span class="badge badge-status-active">Active</span>
+          </div>
+          <div class="display-6 font-mono text-gold mb-3">₹ 3,000.00</div>
+          <div class="small text-muted-custom">
+            <div class="d-flex justify-content-between py-1"><span>Deposit — Initial deposit</span><span class="text-success">+₹5,000.00</span></div>
+            <div class="d-flex justify-content-between py-1"><span>Withdraw — ATM</span><span class="text-danger">-₹1,000.00</span></div>
+            <div class="d-flex justify-content-between py-1"><span>Transfer — to Current a/c</span><span class="text-danger">-₹1,000.00</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOUNT TYPES -->
+<section class="py-5" style="background: var(--ivory);">
+  <div class="container py-4">
+    <div class="section-eyebrow">Account types</div>
+    <h2 class="mb-4">Three accounts, each with its own rules</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="content-card h-100">
+          <div class="stat-card-icon mb-2"><i class="fa-solid fa-piggy-bank text-gold fs-3"></i></div>
+          <h5>Savings Account</h5>
+          <p class="text-muted-custom small mb-1">4% p.a. interest</p>
+          <p class="text-muted-custom small mb-1">₹50,000 withdrawal limit</p>
+          <p class="text-muted-custom small">₹1,000 minimum balance</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="content-card h-100">
+          <div class="stat-card-icon mb-2"><i class="fa-solid fa-building-columns text-gold fs-3"></i></div>
+          <h5>Current Account</h5>
+          <p class="text-muted-custom small mb-1">Built for business</p>
+          <p class="text-muted-custom small mb-1">₹5,00,000 withdrawal limit</p>
+          <p class="text-muted-custom small">No minimum balance</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="content-card h-100">
+          <div class="stat-card-icon mb-2"><i class="fa-solid fa-graduation-cap text-gold fs-3"></i></div>
+          <h5>Student Account</h5>
+          <p class="text-muted-custom small mb-1">5% p.a. interest</p>
+          <p class="text-muted-custom small mb-1">₹10,000 withdrawal limit</p>
+          <p class="text-muted-custom small">No minimum balance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="navy-bg py-5">
+  <div class="container py-4 text-white">
+    <div class="section-eyebrow">Getting started</div>
+    <h2 class="mb-5">Register once, verified twice</h2>
+    <div class="row g-4">
+      <div class="col-md-3 feature-tile-wrap">
+        <div class="feature-tile">
+          <div class="feature-icon"><i class="fa-solid fa-pen"></i></div>
+          <h6>1. Register</h6>
+          <p class="text-muted-custom small mb-0">Tell us who you are.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-tile">
+          <div class="feature-icon"><i class="fa-solid fa-envelope-circle-check"></i></div>
+          <h6>2. Verify by email OTP</h6>
+          <p class="text-muted-custom small mb-0">We confirm it's really you.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-tile">
+          <div class="feature-icon"><i class="fa-solid fa-user-check"></i></div>
+          <h6>3. Employee approves</h6>
+          <p class="text-muted-custom small mb-0">A real employee activates your account.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature-tile">
+          <div class="feature-icon"><i class="fa-solid fa-right-to-bracket"></i></div>
+          <h6>4. Log in and bank</h6>
+          <p class="text-muted-custom small mb-0">Deposit, withdraw, transfer, apply for loans.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="py-4" style="background: #050f1f;">
+  <div class="container d-flex flex-wrap justify-content-between align-items-center text-muted-custom small">
+    <div>© 2026 Smart Digital Bank. A student engineering project.</div>
+    <div><a href="support.html" class="text-muted-custom">Contact support</a></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

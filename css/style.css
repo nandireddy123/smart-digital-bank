@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Smart Digital Banking Platform — Shared Stylesheet
+   Design tokens:
+     Navy 900 #061529 (page background)
+     Navy 800 #0A1F3D (surfaces / sidebar)
+     Navy 700 #123163 (raised cards)
+     Gold 500 #C9A227 (primary accent)
+     Gold 300 #E4C766 (accent hover / highlight)
+     Ivory   #F7F5EF (light content background)
+     Success #2FA36B   Danger #D64545   Muted text #94A3B8
+   Type: "Fraunces" (display/serif — heritage, trust) + "Inter" (UI/body)
+   ========================================================================== */
+
+:root {
+  --navy-900: #061529;
+  --navy-800: #0A1F3D;
+  --navy-700: #123163;
+  --navy-600: #1B4080;
+  --gold-500: #C9A227;
+  --gold-300: #E4C766;
+  --gold-050: #FBF3DC;
+  --ivory: #F7F5EF;
+  --white: #FFFFFF;
+  --text-muted: #94A3B8;
+  --success: #2FA36B;
+  --danger: #D64545;
+  --radius: 14px;
+  --shadow-soft: 0 10px 40px rgba(6, 21, 41, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--ivory);
+  color: var(--navy-900);
+  margin: 0;
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+a { text-decoration: none; }
+
+/* ---------- Brand mark ---------- */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--white);
+}
+.brand-seal {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, var(--gold-300), var(--gold-500) 70%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  color: var(--navy-900);
+  box-shadow: 0 0 0 2px rgba(201,162,39,0.25), 0 4px 14px rgba(201,162,39,0.35);
+  flex-shrink: 0;
+}
+
+/* ---------- Dark navy surfaces / navbar ---------- */
+.navy-bg {
+  background: linear-gradient(180deg, var(--navy-900) 0%, #081a33 100%);
+}
+.navbar-dark-custom {
+  background: rgba(6, 21, 41, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+}
+
+/* ---------- Glassmorphism card (auth pages) ---------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: var(--radius);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  color: var(--white);
+}
+.glass-card label { color: var(--text-muted); font-size: 0.85rem; }
+.glass-card .form-control {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+}
+.glass-card .form-control:focus {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px rgba(201,162,39,0.25);
+  color: var(--white);
+}
+.glass-card .form-control::placeholder { color: rgba(255,255,255,0.35); }
+
+/* ---------- Buttons ---------- */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
+  border: none;
+  color: var(--navy-900);
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.65rem 1.4rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(201,162,39,0.35);
+  color: var(--navy-900);
+}
+.btn-outline-gold {
+  border: 1px solid var(--gold-500);
+  color: var(--gold-300);
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-outline-gold:hover { background: rgba(201,162,39,0.12); color: var(--gold-300); }
+
+.btn-navy {
+  background: var(--navy-700);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.btn-navy:hover { background: var(--navy-600); color: var(--white); }
+
+/* ---------- Dashboard shell ---------- */
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--navy-900), #081a33);
+  color: var(--white);
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid rgba(201,162,39,0.15);
+}
+.sidebar .nav-section-label {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 1.2rem 0.75rem 0.4rem;
+}
+.sidebar .nav-link {
+  color: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+.sidebar .nav-link:hover { background: rgba(201,162,39,0.1); color: var(--white); }
+.sidebar .nav-link.active {
+  background: rgba(201,162,39,0.18);
+  color: var(--gold-300);
+  font-weight: 600;
+}
+.sidebar .nav-link i { width: 18px; text-align: center; }
+
+.main-content { flex: 1; padding: 2rem 2.25rem; max-width: 1200px; }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+
+/* ---------- Stat / content cards ---------- */
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(10,31,61,0.06);
+  box-shadow: 0 4px 18px rgba(10,31,61,0.06);
+  height: 100%;
+}
+.stat-card .stat-label { color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-card .stat-value { font-family: 'Fraunces', serif; font-size: 1.9rem; color: var(--navy-900); margin-top: 4px; }
+.stat-card .stat-icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: var(--gold-050);
+  color: var(--gold-500);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+
+.content-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border: 1px solid rgba(10,31,61,0.06);
+  box-shadow: 0 4px 18px rgba(10,31,61,0.05);
+}
+
+.badge-status-active { background: rgba(47,163,107,0.12); color: var(--success); font-weight: 600; }
+.badge-status-pending { background: rgba(201,162,39,0.15); color: #9c7d1a; font-weight: 600; }
+.badge-status-frozen { background: rgba(214,69,69,0.12); color: var(--danger); font-weight: 600; }
+.badge-status-closed { background: rgba(148,163,184,0.2); color: #64748b; font-weight: 600; }
+
+table.table-bank thead th {
+  color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.05em; border-bottom: 2px solid rgba(10,31,61,0.08); font-weight: 700;
+}
+table.table-bank td { vertical-align: middle; }
+
+/* ---------- Landing page ---------- */
+.hero-section { padding: 7rem 0 5rem; position: relative; overflow: hidden; }
+.hero-ledger-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-500), transparent);
+  background-size: 200% 100%;
+  animation: ledgerFlow 4s linear infinite;
+}
+@keyframes ledgerFlow {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.hero-counter {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.feature-tile {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,162,39,0.15);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  height: 100%;
+  color: var(--white);
+}
+.feature-tile .feature-icon { color: var(--gold-300); font-size: 1.4rem; margin-bottom: 0.6rem; }
+
+.section-eyebrow {
+  color: var(--gold-500);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---------- Utility ---------- */
+.text-gold { color: var(--gold-500); }
+.text-muted-custom { color: var(--text-muted); }
+.divider-gold { height: 1px; background: linear-gradient(90deg, var(--gold-500), transparent); border: none; }
+.font-mono {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .sidebar { position: fixed; left: -280px; z-index: 1050; transition: left 0.2s ease; }
+  .sidebar.show { left: 0; }
+  .main-content { padding: 1.25rem; }
+}
