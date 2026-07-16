@@ -38,14 +38,19 @@ class Settings(BaseSettings):
     OTP_EXPIRE_MINUTES: int = 10
 
     # ---- Email (SMTP) ----
-    # If SMTP_USERNAME / SMTP_PASSWORD are left blank, the app falls back
-    # to printing the OTP to the console/log so you can develop locally
-    # without configuring a real mail server.
+    # NOTE: Render's free tier blocks outbound SMTP ports (25/465/587), so
+    # SMTP will not work when deployed there. Use RESEND_API_KEY instead
+    # (sends over HTTPS, which is never blocked). SMTP still works for
+    # local development if you prefer it.
     SMTP_HOST: str = os.getenv("SMTP_HOST", "smtp.gmail.com")
     SMTP_PORT: int = int(os.getenv("SMTP_PORT", "587"))
     SMTP_USERNAME: str = os.getenv("SMTP_USERNAME", "")
     SMTP_PASSWORD: str = os.getenv("SMTP_PASSWORD", "")
     SMTP_FROM: str = os.getenv("SMTP_FROM", "no-reply@smartbank.local")
+
+    # ---- Email (Resend - HTTP API, works on Render free tier) ----
+    RESEND_API_KEY: str = os.getenv("RESEND_API_KEY", "")
+    RESEND_FROM: str = os.getenv("RESEND_FROM", "onboarding@resend.dev")
 
     # ---- App ----
     APP_NAME: str = "Smart Digital Banking Platform"
